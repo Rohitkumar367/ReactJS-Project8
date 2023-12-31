@@ -7,6 +7,7 @@ import { AppContext } from './context/AppContext';
 
 function App() {
 
+  // Step3 => consuming
   const {fetchBlogPosts} = useContext(AppContext);
 
   useEffect(() => {
