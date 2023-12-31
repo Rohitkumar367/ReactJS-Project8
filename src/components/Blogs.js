@@ -9,7 +9,7 @@ const Blogs = () => {
 
 
   return (
-    <div>
+    <div className='w-11/12 max-w-[670px] h-screen py-8 flex flex-col justify-center items-center gap-y-7 mt-[65px] mb-[55px]'>
 
       {
         loading ? (<Spinner></Spinner>) : (posts.length===0 ? 
@@ -24,20 +24,20 @@ const Blogs = () => {
                 return(
                   <div key={curElem.id}>
 
-                    <p className='font-bold'>{curElem.title}</p>
+                    <p className='font-bold text-lg'>{curElem.title}</p>
 
-                    <p>
-                      By <span>{curElem.author}</span> on <span>{curElem.category}</span>
+                    <p className='text-sm mt-[4px]'>
+                      By <span className='italic'>{curElem.author}</span> on <span className='underline font-bold'>{curElem.category}</span>
                     </p>
 
-                    <p>Posted on {curElem.date}</p>
+                    <p className='text-[15px] mt-[4px]'>Posted on {curElem.date}</p>
 
-                    <p>{curElem.content}</p>
+                    <p className='text-md mt-[13px]'>{curElem.content}</p>
 
-                    <div>
+                    <div className='flex flex-wrap gap-x-3 mt-[5px]'>
                       {curElem.tags.map((tag, index) => {
                         return (
-                          <span key={index}>{`#${tag}`}</span>
+                          <span key={index} className='text-blue-700 underline font-bold text-xs'>{`#${tag}`}</span>
                         )
                       })}
                     </div>
