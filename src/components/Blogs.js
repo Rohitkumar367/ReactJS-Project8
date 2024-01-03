@@ -9,7 +9,7 @@ const Blogs = () => {
 
 
   return (
-    <div className='w-11/12 max-w-[670px] h-screen py-8 flex flex-col justify-center items-center gap-y-7 mt-[65px] mb-[55px]'>
+    <div className='w-11/12 max-w-[670px] h-screen py-8 flex flex-col justify-center items-center gap-y-7 mb-[200px]'>
 
       {
         loading ? (<Spinner></Spinner>) : (posts.length===0 ? 
