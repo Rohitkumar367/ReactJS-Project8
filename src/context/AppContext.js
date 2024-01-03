@@ -14,6 +14,7 @@ function AppContextProvider({children}){
     //data filling
     async function fetchBlogPosts(page=1, tag=null, category){
         setLoading(true);
+
         let url = `${baseUrl}?page=${page}`;
 
         if(tag){
@@ -36,6 +37,7 @@ function AppContextProvider({children}){
             setPosts([]);
             setTotalPages(null);
         }
+        
         setLoading(false);
     }
 

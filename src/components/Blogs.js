@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
 import Spinner from './Spinner';
+import BlogDetails from './BlogDetails';
 
 const Blogs = () => {
 
@@ -9,7 +10,7 @@ const Blogs = () => {
 
 
   return (
-    <div className='w-11/12 max-w-[670px] h-screen py-8 flex flex-col justify-center items-center gap-y-7 mb-[200px]'>
+    <div className='w-11/12 max-w-[670px] h-screen py-8 flex flex-col justify-center items-center gap-y-7 mb-[65px] mt-[55px]'>
 
       {
         loading ? (<Spinner></Spinner>) : (posts.length===0 ? 
@@ -22,27 +23,7 @@ const Blogs = () => {
             (
               posts.map((curElem) => {
                 return(
-                  <div key={curElem.id}>
-
-                    <p className='font-bold text-lg'>{curElem.title}</p>
-
-                    <p className='text-sm mt-[4px]'>
-                      By <span className='italic'>{curElem.author}</span> on <span className='underline font-bold'>{curElem.category}</span>
-                    </p>
-
-                    <p className='text-[15px] mt-[4px]'>Posted on {curElem.date}</p>
-
-                    <p className='text-md mt-[13px]'>{curElem.content}</p>
-
-                    <div className='flex flex-wrap gap-x-3 mt-[5px]'>
-                      {curElem.tags.map((tag, index) => {
-                        return (
-                          <span key={index} className='text-blue-700 underline font-bold text-xs'>{`#${tag}`}</span>
-                        )
-                      })}
-                    </div>
-
-                  </div>
+                  <BlogDetails key={curElem.id} post={curElem}></BlogDetails>
                 )
               })
             )
