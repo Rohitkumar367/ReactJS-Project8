@@ -1,16 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Header from '../components/Header'
-import { useLocation, useNavigation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { AppContext } from '../context/AppContext';
-import { baseUrl } from '../baseUrl';
 import BlogDetails from '../components/BlogDetails';
 
 const BlogPage = () => {
 
+  const newBaseUrl = "https://codehelp-apis.vercel.app/api/";
+
   const[blog, setBlog] = useState(null);
   const[relatedBlogs, setRelatedBlogs] = useState([]);
   const location = useLocation();
-  const navigation = useNavigation();
+  const navigate = useNavigate();
 
   const {setLoading, loading} = useContext(AppContext);
 
@@ -18,7 +19,7 @@ const BlogPage = () => {
 
   async function fetchRelatedBlogs(){
     setLoading(true);
-    let url = `${baseUrl}?blogId=${blogId}`;
+    let url = `${newBaseUrl}get-blog?blogId=${blogId}`;
     try{
       const res = await fetch(url);
       const data = await res.json();
@@ -43,7 +44,7 @@ const BlogPage = () => {
     <div>
       <Header></Header>
       <div>
-        <button onClick={() => navigation(-1)}>Back</button>
+        <button onClick={() => navigate(-1)}>Back</button>
       </div>
       {
         loading ? (<p>loading</p>) : (blog ? 
