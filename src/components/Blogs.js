@@ -10,10 +10,11 @@ const Blogs = () => {
 
 
   return (
-    <div className='w-11/12 max-w-[670px] h-screen py-8 flex flex-col justify-center items-center gap-y-7 mb-[65px] mt-[55px]'>
+    <div className='py-3 flex flex-col gap-y-7 px-1 mt-[65px] mb-[60px]'>
 
       {
-        loading ? (<Spinner></Spinner>) : (posts.length===0 ? 
+        loading ? (<Spinner></Spinner>) : 
+        (posts.length===0 ? 
             (
               <div>
                 <p>No post found</p>

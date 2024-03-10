@@ -34,12 +34,16 @@ function App() {
   },[location.pathname, location.search])
 
   return (
-    <Routes>
-      <Route path='/' element = {<Home></Home>}></Route>
-      <Route path='/blog/:blogId' element = {<BlogPage></BlogPage>}></Route>
-      <Route path='/tags/:tag' element = {<TagPage></TagPage>}></Route>
-      <Route path='/categories/:category' element = {<CategoryPage></CategoryPage>}></Route>
-    </Routes>
+
+    <div className='w-full h-full flex flex-col gap-y-1 justify-center items-center'>
+      <Routes>
+        <Route path='/' element = {<Home></Home>}></Route>
+        <Route path='/blog/:blogId' element = {<BlogPage></BlogPage>}></Route>
+        <Route path='/tags/:tag' element = {<TagPage></TagPage>}></Route>
+        <Route path='/categories/:category' element = {<CategoryPage></CategoryPage>}></Route>
+      </Routes>
+    </div>
+
   );
 }
 

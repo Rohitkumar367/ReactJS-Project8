@@ -6,7 +6,9 @@ import Pagination from '../components/Pagination'
 const Home = () => {
   return (
     <div>
-      <Header></Header>
+      <div>
+        <Header></Header>
+      </div>
       <div>
         <Blogs></Blogs>
         <Pagination></Pagination>
