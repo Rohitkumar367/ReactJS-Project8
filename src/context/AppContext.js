@@ -1,3 +1,9 @@
+
+// In ReactJS, the Context API is a feature that allows you to pass data through the component tree without having to pass props down manually at every level. It provides a way to share values like themes, preferred language, or authentication status to all components in the tree without explicitly passing them as props at every level
+
+// key words used -> 'createContext()' and 'file_name.provider', provider provides a value to its children
+
+
 import { createContext, useState } from "react";
 import {baseUrl} from "../baseUrl";
 import { useNavigate } from "react-router-dom";
